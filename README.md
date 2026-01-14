@@ -6,9 +6,9 @@ This is the official implementation of the paper:
 ## 🚀 Quick Start
 ###  Install dependencies
 
-'''bash
+```bash
 pip install -r requirements.txt
-'''
+```
 
 ### Download the dataset 
 The dataset will be automatically downloaded to the `~/datasets` directory when you run the training script for the first time. If you prefer to store the dataset elsewhere, please manually set the path.
