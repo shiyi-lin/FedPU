@@ -1,7 +1,7 @@
 # FedPU
 
 This is the official implementation of the paper:  
-**"One-Shot Pareto-Optimal Federated Unlearning for Regulation-Aligned Medical A"**  
+**"One-Shot Pareto-Optimal Federated Unlearning for Regulation-Aligned Medical AI"**  
 
 ## 🚀 Quick Start
 ###  Install dependencies
