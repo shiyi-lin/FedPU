@@ -19,6 +19,7 @@ Before performing unlearning, you need to train the base models. We provide two 
 #### 1. Normal FL Training (With Poisoned Forgetting Data)
 This command trains a standard Federated Learning model where the target client's data contains backdoor triggers. This model serves as the **initial state** for the unlearning process.
 
+Note: Please ensure that the --seed argument remains consistent across all experimental phases (Training, Unlearning, and Retraining). This guarantees that the data partitioning (specifically the split between forgetting and retaining sets) is identical for a fair comparison.
 ```bash
 python main.py --seed 42 --E 1 --dataset pathmnist --device cuda:1 --lr 0.01 --mislabel 0.2 --algorithm fedavg --local_model ResNet18 --backdoor_attack --train_type train  --lr_sch --save_model
 ```
@@ -26,7 +27,7 @@ python main.py --seed 42 --E 1 --dataset pathmnist --device cuda:1 --lr 0.01 --m
 #### 2. Retraining (Without Forgetting Data)
 This command trains a model from scratch, completely excluding the data targeted for forgetting. 
 ```bash
-python main.py --seed 2025 --E 1 --dataset pathmnist --device cuda:1 --lr 0.01 --mislabel 0.2 --algorithm fedavg --local_model ResNet18 --backdoor_attack --train_type unlearning --lr_sch --save_model
+python main.py --seed 42 --E 1 --dataset pathmnist --device cuda:1 --lr 0.01 --mislabel 0.2 --algorithm fedavg --local_model ResNet18 --backdoor_attack --train_type unlearning --lr_sch --save_model
 ```
 
 ### 🔄 Unlearning Process
